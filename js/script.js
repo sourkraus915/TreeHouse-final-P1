@@ -60,9 +60,11 @@ project 1 - A Random Quote Generator
           source: 'John Lennon', citation: 'Hubspot.com' } ]
 
 
- var length = quotes.length,
+ var length = quotes.length
  var rand = Math.round(Math.random()*(length - 1));
 console.log(quotes);
+console.log(rand);
+console.log(length);
 function showQuote(){document.write(quotes[rand]);}
 showQuote();
 
@@ -74,8 +76,10 @@ showQuote();
   getRandomQuote=function(){
   
   var randomIndex=Math.floor(Math.random()*(quotes.length));  
-  var quotesArr=quotes[randomIndex];
-  document.getElementsByClassName("quotes")[0].innerHTML=quotesArr.quote;
+  var randomQuote=quotes[randomIndex];
+  return randomQuote;
+//   document.getElementsByClassName("quotes")[0].innerHTML=quotesArr.quote;
+
   }
   
 console.log(quotes);
@@ -85,8 +89,13 @@ console.log(quotes);
 ***/
 
 function printQuote(message) {
-  var message = "<p class='quote'>" + quotes.quote + "</p>" + "<p class='source'>" + quotes.source + "</p>";
-  document.getElementById('quote-box').innerHTML = message;
+//   var message = "<p class='quote'>" + quotes.quote + "</p>" + "<p class='source'>" + quotes.source + "</p>";
+var jimmySlices=getRandomQuote();
+console.log(jimmySlices);
+var message= 'jimmySlices.source<span class="citation">jimmySlices.citation</span><span class="year">2016</span>'
+document.getElementsByClassName("quote")[0].innerHTML = jimmySlices.quote;
+document.getElementsByClassName("source")[0].innerHTML = jimmySlices.source;
+document.getElementsByClassName("citation")[0].innerHTML = jimmySlices.citation;
 
 }
 
