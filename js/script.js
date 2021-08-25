@@ -10,64 +10,26 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
-
-// var quotes = [];
-//   let emptyObject = {};
-//   for(i = 0; i < 7; i++){
-//     quotes.push({});
-//   }
-  // quotes[0]["quotes"] = "The way to get started is to quit talking and begin doing.";
-  // quotes[0]["source"] = "Walt Disney";
-  // quotes[0]["citation"] = "Hubspot.com";
-  // quotes[1]["quotes"] = "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking.";
-  // quotes[1]["source"] = "Steve Jobs";
-  // quotes[1]["citation"] = "Hubspot.com";
-  // quotes[2]["quote"] = "I wish there was a way to know you’re in the good old days, before you’ve actually left them.";
-  // quotes[2]["source"] = "Andy Bernard";
-  // quotes[2]["citation"] = "The Office";
-  // quotes[3]["quote"] = "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success."
-  // quotes[3]["source"] = "James Cameron"
-  // quotes[3]["citation"] = "Hubspot.com"
-  // quotes[4]["quote"] = "Life is what happens when you're busy making other plans."
-  // quotes[4]["source"] = "John Lennon"
-  // quotes[4]["citation"] = "hubspot.com"
-  // quotes[5]["quote"] = "Do I need to be liked? Absolutely not. I like to be liked. I enjoy being liked. I have to be liked, but it’s not like this compulsive need to be liked, like my need to be praised."
-  // quotes[5]["source"] = "Michael Scott"
-  // quotes[5]["citation"] = "The Office"
-  // quotes[6]["quote"] = "We choose to go to the Moon in this decade and do the other things, not because they are easy, but because they are hard"
-  // quotes[6]["source"] = "John F Kennedy"
-  // quotes[6]["citation"] = "hubspot.com"
-
   const quotes = [ { quote: "The way to get started is to quit talking and begin doing.", 
-          source: 'Walt Disney', citation: 'Hubspot.com' },
+          source: 'Walt Disney', citation: 'Hubspot.com', year: '1952'},
 
    { quote: "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking.", 
-          source: 'Steve Jobs', citation: 'Hubspot.com' },
+          source: 'Steve Jobs', citation: 'Hubspot.com', year: '1981' },
 
    { quote: "I wish there was a way to know you’re in the good old days, before you’ve actually left them.", 
-          source: 'Andy Bernard', citation: 'The Office' },
+          source: 'Andy Bernard', citation: 'The Office', year: '2011' },
 
    { quote: "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success.", 
-          source: 'James Cameron', citation: 'Hubspot.com' },
+          source: 'James Cameron', citation: 'Hubspot.com', year: '1998'},
 
    { quote: "Do I need to be liked? Absolutely not. I like to be liked. I enjoy being liked. I have to be liked, but it’s not like this compulsive need to be liked, like my need to be praised.", 
-          source: 'Michael Scott', citation: 'The Office' },
+          source: 'Michael Scott', citation: 'The Office', year: '2009'},
 
    { quote: "We choose to go to the Moon in this decade and do the other things, not because they are easy, but because they are hard", 
-          source: 'John F Kennedy', citation: 'Hubspot.com' },
+          source: 'John F Kennedy', citation: 'Hubspot.com', year: '1960'},
 
    { quote: "Life is what happens when you're busy making other plans", 
-          source: 'John Lennon', citation: 'Hubspot.com' } ]
-
-
- var length = quotes.length
- var rand = Math.round(Math.random()*(length - 1));
-console.log(quotes);
-console.log(rand);
-console.log(length);
-function showQuote(){document.write(quotes[rand]);}
-showQuote();
-
+          source: 'John Lennon', citation: 'Hubspot.com', year: '1972'} ]
 
 /***
  * `getRandomQuote` function
@@ -78,28 +40,21 @@ showQuote();
   var randomIndex=Math.floor(Math.random()*(quotes.length));  
   var randomQuote=quotes[randomIndex];
   return randomQuote;
-//   document.getElementsByClassName("quotes")[0].innerHTML=quotesArr.quote;
 
   }
   
-console.log(quotes);
 
 /***
  * `printQuote` function
 ***/
 
-function printQuote(message) {
-//   var message = "<p class='quote'>" + quotes.quote + "</p>" + "<p class='source'>" + quotes.source + "</p>";
-var jimmySlices=getRandomQuote();
-console.log(jimmySlices);
-var message= 'jimmySlices.source<span class="citation">jimmySlices.citation</span><span class="year">2016</span>'
-document.getElementsByClassName("quote")[0].innerHTML = jimmySlices.quote;
-document.getElementsByClassName("source")[0].innerHTML = jimmySlices.source;
-document.getElementsByClassName("citation")[0].innerHTML = jimmySlices.citation;
+function printQuote() {
+var randomQuote=getRandomQuote();
 
+var message= randomQuote.source + '<span class="citation"> ' + randomQuote.citation + ' </span><span class="year"> ' + randomQuote.year + '</span>';
+document.getElementsByClassName("quote")[0].innerHTML = randomQuote.quote;
+document.getElementsByClassName("source")[0].innerHTML = message;
 }
-
-
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
