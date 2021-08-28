@@ -29,7 +29,9 @@ project 1 - A Random Quote Generator
           source: 'John F Kennedy', citation: 'Hubspot.com', year: '1960'},
 
    { quote: "Life is what happens when you're busy making other plans", 
-          source: 'John Lennon', citation: 'Hubspot.com', year: '1972'} ]
+          source: 'John Lennon', 
+       //    citation: 'Hubspot.com', year: '1972'
+       } ]
 
 /***
  * `getRandomQuote` function
@@ -51,10 +53,27 @@ project 1 - A Random Quote Generator
 function printQuote() {
 var randomQuote=getRandomQuote();
 
-var message= randomQuote.source + '<span class="citation"> ' + randomQuote.citation + ' </span><span class="year"> ' + randomQuote.year + '</span>';
-document.getElementsByClassName("quote")[0].innerHTML = randomQuote.quote;
-document.getElementsByClassName("source")[0].innerHTML = message;
+
+var message= '<p class= "quote">' + randomQuote.quote + '</p>' + '<p class= "source">' + randomQuote.source + '<span class="citation"> ' + randomQuote.citation + ' </span><span class="year"> ' + randomQuote.year + '</span>';
+
+// console.log(message);
+
+if (randomQuote.citation) {
+       randomQuote.citation == message
+     } else {
+      randomQuote.citation="N/A"
+     }
+if (randomQuote.year) {
+       randomQuote.year == message 
+     } else {
+       randomQuote.year="N/A"
+     }
+
+document.getElementsByClassName("quote-box")[0].innerHTML = message;
+// document.getElementsByClassName("source")[0].innerHTML = message;
 }
+
+
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
