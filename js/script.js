@@ -56,16 +56,16 @@ var randomQuote=getRandomQuote();
 if (randomQuote.citation) {
        randomQuote.citation 
       } else {
-       randomQuote.citation=" "
+       randomQuote.citation="&nbsp;"
       }
  if (randomQuote.year) {
         randomQuote.year
       } else {
-        randomQuote.year=" "
+        randomQuote.year="&nbsp;"
       }
  
 
-var message= '<p class= "quote">' + randomQuote.quote + '</p>' + '<p class= "source">' + randomQuote.source + '<span class="citation"> ' + randomQuote.citation + ' </span><span class="year"> ' + randomQuote.year + '</span>';
+var message= '<p class= "quote">' + randomQuote.quote + '</p>' + '<p class= "source">' + randomQuote.source + '<span class="citation"> ' + randomQuote.citation + '</span><span class="year">' + randomQuote.year + '</span>';
 
 // console.log(message);
 
