@@ -55,7 +55,7 @@ project 1 - A Random Quote Generator
      {
        quote: "Life is what happens when you're busy making other plans",
        source: 'John Lennon',
-       //    citation: 'Hubspot.com', year: '1972'
+          // citation: 'Hubspot.com', year: '1972'
      }
    ]
    
