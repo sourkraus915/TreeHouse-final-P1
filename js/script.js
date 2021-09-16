@@ -87,6 +87,7 @@ project 1 - A Random Quote Generator
      if (randomQuote.year) {
        message += '<span class="year">' + randomQuote.year + '</span>';
      }
+     message += '</p>';
      // console.log(message);
    
      document.getElementsByClassName("quote-box")[0].innerHTML = message;
