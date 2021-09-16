@@ -80,16 +80,11 @@ project 1 - A Random Quote Generator
      var randomQuote = getRandomQuote();
    
      if (randomQuote.citation) {
-       randomQuote.citation
-     } else {
-       randomQuote.citation = "&nbsp;"
-     }
-     if (randomQuote.year) {
-       randomQuote.year
-     } else {
-       randomQuote.year = "&nbsp;"
-     }
-   
+      message += '<span class="citation"> ' + randomQuote.citation + '</span>';
+    }
+    if (randomQuote.year) {
+      message += '<span class="year">' + randomQuote.year + '</span>';
+    }
    
      var message = '<p class= "quote">' + randomQuote.quote + '</p>' + '<p class= "source">' + randomQuote.source + '<span class="citation"> ' + randomQuote.citation + '</span><span class="year">' + randomQuote.year + '</span>';
    
@@ -106,3 +101,5 @@ project 1 - A Random Quote Generator
     ***/
    
    document.getElementById('load-quote').addEventListener("click", printQuote, false);
+
+  
