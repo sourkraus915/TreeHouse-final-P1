@@ -79,15 +79,14 @@ project 1 - A Random Quote Generator
    function printQuote() {
      var randomQuote = getRandomQuote();
    
-      if (randomQuote.citation) {
-      message += '<span class="citation"> ' + randomQuote.citation + '</span>';
-    }
-      if (randomQuote.year) {
-      message += '<span class="year">' + randomQuote.year + '</span>';
-    }
+     var message = '<p class= "quote">' + randomQuote.quote + '</p>' + '<p class= "source">' + randomQuote.source;
    
-     var message = '<p class= "quote">' + randomQuote.quote + '</p>' + '<p class= "source">' + randomQuote.source + '<span class="citation"> ' + randomQuote.citation + '</span><span class="year">' + randomQuote.year + '</span>';
-   
+     if (randomQuote.citation) {
+       message += '<span class="citation"> ' + randomQuote.citation + '</span>';
+     }
+     if (randomQuote.year) {
+       message += '<span class="year">' + randomQuote.year + '</span>';
+     }
      // console.log(message);
    
      document.getElementsByClassName("quote-box")[0].innerHTML = message;
